@@ -16,14 +16,10 @@ public class GoogleTest {
         WebElement search = driver.findElement(By.name("q"));
         search.sendKeys("погода минск");
         Thread.sleep(1000);
-
         driver.findElement(By.xpath("//ul[@role='listbox']/li[1]//span[text()='погода минск']")).click();
-
         driver.findElement(By.xpath("//div[@data-wob-di='1']")).click();
 
         String weather = driver.findElement(By.xpath("//*[contains(@aria-label, '12:00')][1]")).getAttribute("aria-label");
-
         System.out.println(weather);
-
     }
 }
