@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class BookingOneTest {
+public class BookingFirstTest {
 
     static WebDriver driver = new ChromeDriver();
 
@@ -30,7 +30,7 @@ public class BookingOneTest {
             driver.findElement(By.xpath("//div[@data-testid='searchbox-datepicker']/div/div/div[2]//tbody/tr[3]/td[7]")).click();
         }
 
-        WebElement search = driver.findElement(By.name("ss"));
+        WebElement search = driver.findElement(By.xpath("//input[@name='ss']"));
         search.sendKeys("Milano");
         driver.findElement(By.xpath("//button[@type='submit']")).click();
 
