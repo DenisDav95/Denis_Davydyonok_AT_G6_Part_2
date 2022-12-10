@@ -55,7 +55,7 @@ public class BookingSecondCssTest {
             System.out.printf("Рейтинг отеля менее 9.0 и равен %s", rate);
         }
 
-//        driver.close();
-//        driver.quit();
+        driver.close();
+        driver.quit();
     }
 }
