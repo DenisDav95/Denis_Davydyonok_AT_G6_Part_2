@@ -1,5 +1,7 @@
 package homework;
 
+import org.junit.Assert;
+import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
@@ -10,7 +12,8 @@ public class BookingFirstCssTest {
 
     static WebDriver driver = new ChromeDriver();
 
-    public static void main(String[] args) throws InterruptedException {
+    @Test
+    public void bookingTest() throws InterruptedException {
 
 //        2. задание booking 1:
 //        2.1. Перейти на сайт booking.com
@@ -34,12 +37,7 @@ public class BookingFirstCssTest {
         search.sendKeys("Milano");
         driver.findElement(By.cssSelector("button[type='submit']")).click();
 
-        try {
-            driver.findElement(By.cssSelector("h1[class]")).isDisplayed();
-            System.out.println(driver.findElement(By.cssSelector("h1[class]")).getText());
-        } catch (NoSuchElementException e) {
-            System.out.println("Нет отелей на введенные даты");
-        }
+        Assert.assertTrue("Нет отелей на введенные даты", driver.findElement(By.cssSelector("h1[class]")).isDisplayed());
 
         driver.close();
         driver.quit();
