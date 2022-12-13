@@ -22,9 +22,9 @@
                 <version>2.22.2</version>
                 <configuration>
                     <includes>
-                        <include>AutomatedEngineerTests.java</include>
-                        <include>ManualEngineerTests.java</include>
-                        <include>BaseEngineerTest.java</include>
+<!--                        <include>AutomatedEngineerTests.java</include>-->
+<!--                        <include>ManualEngineerTests.java</include>-->
+<!--                        <include>BaseEngineerTest.java</include>-->
                     </includes>
                 </configuration>
             </plugin>
