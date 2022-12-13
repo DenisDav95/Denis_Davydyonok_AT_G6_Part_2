@@ -28,7 +28,7 @@ public class GoogleWeatherTest {
         driver.findElement(By.xpath("//div[@data-wob-di='1']")).click();
 
         String tomorrow = DayOfWeek.from(LocalDate.now()).plus(1).getDisplayName(TextStyle.FULL, new Locale("ru"));
-        String weather = driver.findElement(By.xpath(String.format("//*[contains(@aria-label, '%s 12:00')][1]",tomorrow))).getAttribute("aria-label");
+        String weather = driver.findElement(By.xpath(String.format("//*[contains(@aria-label, '%s 12:00')][1]", tomorrow))).getAttribute("aria-label");
         List<String> parsingWeather = new ArrayList<>(Arrays.asList(weather.split(tomorrow)));
         driver.close();
         driver.quit();

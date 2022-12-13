@@ -1,5 +1,7 @@
 package homework;
 
+import org.junit.Assert;
+import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
@@ -12,7 +14,8 @@ public class BookingSecondTest {
 
     static WebDriver driver = new ChromeDriver();
 
-    public static void main(String[] args) throws InterruptedException {
+    @Test
+    public void bookingSecondTest() throws InterruptedException {
 
 //        3. задание booking 2:
 //        3.1. Перейти на сайт booking.com
@@ -49,11 +52,7 @@ public class BookingSecondTest {
                 .getText()
                 .replace(',', '.'));
 
-        if (rate >= 9.0) {
-            System.out.printf("Рэйтинг отеля не меньше 9.0 и равен %s", rate);
-        } else {
-            System.out.printf("Рейтинг отеля менее 9.0 и равен %s", rate);
-        }
+        Assert.assertTrue("Рейтинг отеля менее 9.0", rate >= 9.0);
 
         driver.close();
         driver.quit();
